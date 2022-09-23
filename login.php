@@ -27,7 +27,7 @@ if (!$conn) {
 // Validação do usuário/senha digitados
 
 
-$sql = "SELECT idUsuario, nomeUsuario, emailUsuario FROM tblUsuario WHERE nomeUsuario ='$usuario' and senhausuario=$senha";
+$sql = "SELECT idUsuario, nomeUsuario, emailUsuario FROM tblUsuario WHERE nomeUsuario ='$usuario' and senhausuario=$senha and ativo=1";
 $result = mysqli_query($conn, $sql);
 if  (mysqli_num_rows($result) != 1) {
     // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado

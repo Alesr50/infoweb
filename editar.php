@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
     <title>Editar Usuário</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
 
 <?php
 
-$id = $_GET["user_id"];
+$id = $_GET["idUsuario"];
 settype($id, "integer");
 
 
@@ -42,13 +43,14 @@ $senha = $row["senhaUsuario"];}
 
 <div class="container">
         <form action="edita.php" method="post">
-            <p>Formulário de Cadastro</p>
+            <p>Editar  Cadastro</p>
 
+          
             <div class="field">
-            <div class="field">
-                <label>Valor</label>
+                <label>ID</label>
                 <input type="number" name="id" id="id" value="<?php echo $id;?>"  min="1" readonly>
             </div>
+            <div class="field">
                 <label>Nome</label>
                 <input type="text" name="nome" id="nome" value="<?php echo $nome;?>" required>
             </div>
@@ -61,7 +63,7 @@ $senha = $row["senhaUsuario"];}
                 <label>Senha</label>
                 <input type="password" name="senha" id="senha" value="<?php echo $senha;?>" required>
             </div>
-            <button type="submit" id="button" class="button">Editar</button>
+            <button type="submit" id="button" class="button"  onclick="window.location.href='edita.php?=$id';">Editar</button>
         </form>
 
     </div>
