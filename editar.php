@@ -29,12 +29,13 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT idUsuario, nomeUsuario, emailUsuario,senhaUsuario FROM tblUsuario WHERE idUsuario= $id";
+$sql = "SELECT idUsuario, nomeUsuario,loginUsuario, emailUsuario,senhaUsuario FROM tblUsuario WHERE idUsuario= $id";
 $result = mysqli_query($conn, $sql);
 
 while($row = $result->fetch_assoc()) {
 $id        = $row["idUsuario"];
 $nome      = $row["nomeUsuario"];
+$login      = $row["loginUsuario"];
 $email = $row["emailUsuario"];
 $senha = $row["senhaUsuario"];}
 
@@ -57,6 +58,10 @@ $senha = $row["senhaUsuario"];}
             <div class="field">
                 <label>Email</label>
                 <input type="email" name="email" id="email" value="<?php echo $email;?>" required>
+            </div>
+            <div class="field">
+                <label>Login</label>
+                <input type="email" name="email" id="email" value="<?php echo $login;?>" required>
             </div>
           
             <div class="field">

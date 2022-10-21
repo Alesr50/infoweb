@@ -5,6 +5,7 @@ $password = "";
 $dbname = "dbaula";
 
 $nome=$_GET['nome'];
+$login=$_GET['login'];
 $senha=$_GET['senha'];
 $email=$_GET['email'];
 
@@ -15,8 +16,8 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO tblusuario(nomeusuario, senhausuario, emailusuario)
-VALUES ('$nome', '$senha', '$email')";
+$sql = "INSERT INTO tblusuario(nomeusuario,loginusuario, senhausuario, emailusuario)
+VALUES ('$nome','$login', '$senha', '$email')";
 
 if (mysqli_query($conn, $sql)) {
   echo "Registro Cadastrado";

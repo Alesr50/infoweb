@@ -21,7 +21,6 @@ function confirmacao(id) {
 
 
 
-
 <table id="myTable" class="display">
 <?php
 $servername = "localhost";
